@@ -8,7 +8,7 @@
 
 # ocr.data里面是challenge给出的数据
 
-with open('ocr.data','r') as file:
+with open('data/ocr.data','r') as file:
     page_data = file.read()
 file.close()
 data_map = {}

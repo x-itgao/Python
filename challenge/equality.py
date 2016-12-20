@@ -10,7 +10,7 @@ import re
 # equality.data 数据
 # One small letter, surrounded by EXACTLY three big bodyguards on each of its sides.
 
-with open('equality.data','r') as file:
+with open('data/equality.data','r') as file:
     page_data = file.read()
 file.close()
 page_data = ''.join(page_data)
