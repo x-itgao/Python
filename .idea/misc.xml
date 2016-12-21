@@ -16,5 +16,5 @@
     <ConfirmationsSetting value="0" id="添加" />
     <ConfirmationsSetting value="0" id="移除" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.12 (D:\MyPython\python.exe)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7.12 (D:\Anaconda2-4.2.0-64_bit\python.exe)" project-jdk-type="Python SDK" />
 </project>
