@@ -6,7 +6,6 @@
 @time: 2016/12/20 21:09
 """
 from math import sqrt
-
 critics = {'Lisa Rose':
                {'Lady in the Water':2.5,'Snakes on a Plane':3.5,'Just My Luck':3.0,'Superman Retruns':3.5,'You,Me and Dupree':2.5,'The Night Listener':3.0},
            'Gene Seymour':
