@@ -48,7 +48,7 @@ for feedurl in feedlist:
     print feedurl
     title,wc = getwordcounts(feedurl)
     wordcounts[title] = wc
-    for word ,count in wc.items():
+    for word, count in wc.items():
         apcount.setdefault(word,0)
         if count > 1:
             apcount[word] += 1

@@ -7,6 +7,8 @@
 """
 from math import sqrt
 from PIL import Image,ImageDraw
+import random
+
 
 def readfile(filename):
     lines = [line for line in file(filename)]
@@ -49,17 +51,23 @@ class bicluster:
         self.vec = vec
         self.id = id
         self.distance = distance
+'''
+    分类聚类算法以一组对应于原始数据项的聚类开始，主循环部分会尝试每一组可能的配对
+    并计算他们的相关度，以此找出最佳配对，然后合并成一个新的聚类，这一过程持续重复下去，
+    直到剩下一个聚类
+'''
 
 
-# 算法
-def hcluster(rows,distance=pearson):
+# 算法,找到相互匹配的，保存的是一个节点，删掉了两个分支
+def h_cluster(rows,distance=pearson):
     distances = {}
     currentclustid = -1
 
-    # 最开始的聚类就是数据集中的行
+    # 最开始的聚类就是数据集中的行，原始数据
     clust = [bicluster(rows[i],id=i) for i in range(len(rows))]
     while len(clust) > 1:
         lowestpair = (0,1)
+        # 当前最佳配对
         closest = distance(clust[0].vec,clust[1].vec)
         # 遍历每一个配对，寻找最小距离
         for i in range(len(clust)):
@@ -78,14 +86,115 @@ def hcluster(rows,distance=pearson):
             (clust[lowestpair[0]].vec[i]+clust[lowestpair[1]].vec[i])/2.0 for i in range(len(clust[0].vec))
         ]
         # 建立新的聚类
-        newcluster = bicluster(mergevec,left=clust[lowestpair[0]],
-                               right=clust[lowestpair[1]],distance=closest,id=currentclustid)
+        newcluster = bicluster(mergevec, left=clust[lowestpair[0]],
+                               right=clust[lowestpair[1]], distance=closest, id=currentclustid)
         # 不在原始集合中的聚类，其id为负数
         currentclustid -= 1
         del clust[lowestpair[1]]
         del clust[lowestpair[0]]
         clust.append(newcluster)
     return clust[0]
+
+
+# K-均值聚类过程
+def k_cluster(rows,distance=pearson,k=4):
+    # 确定每个点的最大值和最小值
+    ranges = [(min([row[i] for row in rows]),max([row[i] for row in rows]))
+              for i in range(len(rows[0]))]
+    # 随机创建k个中心点
+    clusters = [[random.random()*(ranges[i][1]-ranges[i][0])+ranges[i][0]
+                 for i in range(len(rows[0]))] for j in range(k)]
+    last_matches = None
+    for t in range(100):
+        print 'Iteration %d' % t
+        best_matches = [[] for i in range(k)]
+        # 在每一行中寻找距离最近的中心点
+        for j in range(len(rows)):
+            row = rows[j]
+            best_match = 0
+            for i in range(k):
+                d = distance(clusters[i],row)
+                if d < distance(clusters[best_match],row):
+                    best_match = i
+            best_matches[best_match].append(j)
+        # 如果结果与上次相同，则整个过程结束
+        if best_matches == last_matches:
+            break
+        last_matches = best_matches
+        # 把中心点移到其他成员的平均位置处
+        for i in range(k):
+            avgs = [0.0] * len(rows[0])
+            if len(best_matches[i]) > 0:
+                for row_id in best_matches[i]:
+                    for m in range(len(rows[row_id])):
+                        avgs[m] += rows[row_id][m]
+                for j in range(len(avgs)):
+                    avgs[j] /= len(best_matches[i])
+                clusters[i] = avgs
+    return best_matches
+
+
+# Tanimoto系数 度量，代表的是交集(只包含那些在两个集合都出现的项)与并集(包含所有出现在任一集合的项)的比率
+def tanimoto(v1,v2):
+    c1,c2,shr = 0,0,0
+    for i in range(len(v1)):
+        if v1[i] != 0:
+            c1 += 1
+        if v2[i] != 0:
+            c2 += 1
+        if v1[i] != 0 and v2[i] != 0:
+            shr +=1
+    return 1.0 - (float(shr) / (c1+c2-shr))
+
+
+# 多维缩放
+def scale_down(data,distance=pearson,rate=0.01):
+    n = len(data)
+
+    # 每一对数据项之间真实距离
+    real_dist = [[distance(data[i],data[j]) for j in range(n)] for i in range(0,n)]
+
+    outer_num = 0.0
+    # 随机初始化节点在二维空间中的起始位置
+    loc = [[random.random(),random.random()] for i in range(n)]
+    fake_dist = [[0.0 for j in range(n)] for i in range(n)]
+
+    last_error = None
+    for m in range(0,1000):
+        # 寻找投影后的距离
+        for i in range(n):
+            for j in range(n):
+                fake_dist[i][j] = sqrt(sum([pow(loc[i][x]-loc[j][x],2) for x in range(len(loc[i]))]))
+        # 移动节点
+        grad = [[0.0,0.0] for i in range(n)]
+        total_error = 0
+        for k in range(n):
+            for j in range(n):
+                if j == k:
+                    continue
+                # 该误差值等于目标距离与当前距离之间差值的百分比
+                error_term = (fake_dist[j][k] - real_dist[j][k]) / real_dist[j][k]
+                grad[k][0] += ((loc[k][0]-loc[j][0]) / fake_dist[j][k]) * error_term
+                grad[k][1] += ((loc[k][1]-loc[j][1]) / fake_dist[j][k]) * error_term
+                # 记录总的误差值
+                total_error += abs(error_term)
+        # 如果节点移动后情况变得更糟则程序结束
+        if last_error and last_error < total_error:
+            break
+        last_error = total_error
+    return loc
+
+
+# 二维
+def draw2d(data,labels,jpeg='data/mds2d.jpg'):
+    img = Image.new('RGB',(2000,2000),(255,255,255))
+    draw = ImageDraw.Draw(img)
+    for i in range(len(data)):
+        x = (data[i][0] + 0.5) * 1000
+        y = (data[i][1] + 0.5) * 1000
+        draw.text((x,y),labels[i],(0,0,0))
+
+    img.save(jpeg,'JPEG')
 
 
 # 打印
@@ -101,9 +210,18 @@ def printclust(clust,labels=None,n=0):
         else:
             print labels[clust.id]
     if clust.left:
-        printclust(clust.left,labels=labels,n = n+1)
+        printclust(clust.left,labels=labels, n=n+1)
     if clust.right:
-        printclust(clust.right,labels=labels,n = n+1)
+        printclust(clust.right,labels=labels, n=n+1)
+
+
+# 将整个数据集转置，每一行代表 一个单词对应出现次数
+def rotate_matrix(data):
+    new_data = []
+    for i in range(len(data)):
+        new_row = [data[j][i] for j in range(len(data))]
+        new_data.append(new_row)
+    return new_data
 
 
 # 绘制树状图
@@ -162,6 +280,21 @@ def drawnode(draw,clust,x,y,scaling,labels):
         draw.text((x+5,y-7),labels[clust.id],(0,0,0))
 if __name__ == '__main__':
     blognames,words,data = readfile('data/blogdata.txt')
-    clust = hcluster(data)
+    # clust = hcluster(data)
     # printclust(clust,labels=blognames)
-    drawdendrogram(clust,blognames,jpeg='data/bligclust.jpg')
+    #　绘制博客树状图
+    # drawdendrogram(clust,blognames,jpeg='data/bligclust.jpg')
+    # 绘制单词树状图
+    # r_data = rotate_matrix(data)
+    # word_clust = h_cluster(r_data)
+    # drawdendrogram(word_clust,labels=words,jpeg='data/wordclust.jpg')
+    # k-聚类
+    # k_clust = k_cluster(data,k=5)
+    # print k_clust
+    # print [blognames[r] for r in k_clust[0]]
+    # print [blognames[r] for r in k_clust[1]]
+    # wants,people,data = readfile('data/zebo.txt')
+    # clust = h_cluster(data,distance=tanimoto)
+    # drawdendrogram(clust,wants,'data/clusters.jpg')
+    coords = scale_down(data)
+    draw2d(coords,blognames)
