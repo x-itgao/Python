@@ -31,7 +31,7 @@ select_end = '\n\t</select>'
 def generate():
     maps = getTableInfo()
     resultMap = result_header_start+"\n"
-    insert = insert_start+'\n\t\tinsert to '+setting.TABLE_NAME+' VALUES('
+    insert = insert_start+'\n\t\tinsert into '+setting.TABLE_NAME+' VALUES('
     id = maps.values()[0].keys()[0]
     delete = delete_start+'\n\t\tdelete from '+setting.TABLE_NAME+' where '+id+' = #{'+id+'}'+delete_end
     select = select_start+'\n\t\tselect * from '+setting.TABLE_NAME+' where' +id+' = #{'+id+'}'+select_end
