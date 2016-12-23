@@ -47,8 +47,8 @@ def generate():
             update += key+' = #{'+key+'},'
         index += 1
     resultMap += result_header_end
-    insert = insert[:-1]+insert_end
-    update = update[:-1]+'where '+id+' = #{'+id+'}'+update_end
+    insert = insert[:-1]+")"+insert_end
+    update = update[:-1]+' where '+id+' = #{'+id+'}'+update_end
     content = header+'\n'+resultMap+insert+update+select+delete+'\n</mapper>'
     return content
 if __name__ == '__main__':
