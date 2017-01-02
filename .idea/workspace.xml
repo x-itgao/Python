@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7b340fd-6f4c-4901-9d3f-73096c0d8bee" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/intelligence/data/feedlist.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intelligence/clusters.py" afterPath="$PROJECT_DIR$/intelligence/clusters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intelligence/generatefeedvector.py" afterPath="$PROJECT_DIR$/intelligence/generatefeedvector.py" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +26,18 @@
     <SUITE FILE_PATH="coverage/Python$deliciousrec.coverage" NAME="deliciousrec Coverage Results" MODIFIED="1482298439522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
     <SUITE FILE_PATH="coverage/Python$data.coverage" NAME="data Coverage Results" MODIFIED="1482304453284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
     <SUITE FILE_PATH="coverage/Python$downloadzebodata.coverage" NAME="downloadzebodata Coverage Results" MODIFIED="1482379270423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
+    <SUITE FILE_PATH="coverage/Python$searchengine.coverage" NAME="searchengine Coverage Results" MODIFIED="1483275251229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence/searchengine" />
     <SUITE FILE_PATH="coverage/Python$test.coverage" NAME="test Coverage Results" MODIFIED="1482240176321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -40,16 +45,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/intelligence/data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="generatefeedvector.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/intelligence/generatefeedvector.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -62,14 +57,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="clusters.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="clusters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/intelligence/clusters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38043478">
-              <caret line="180" column="9" selection-start-line="180" selection-start-column="9" selection-end-line="180" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="e#89#110#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchengine.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/intelligence/searchengine/searchengine.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.924078">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+              <folding>
+                <element signature="e#93#107#0" expanded="true" />
+                <marker date="1483275868416" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
+                <marker date="1483275868416" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
+                <marker date="1483275868416" expanded="true" signature="995:1023" placeholder="select last_... " />
+                <marker date="1483275868416" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
+                <marker date="1483275868416" expanded="true" signature="995:1026" placeholder="select last_... " />
+                <marker date="1483275868416" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
+                <marker date="1483275868416" expanded="true" signature="1829:1830" placeholder="insert into wordlocation... " />
+                <marker date="1483275868416" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
+                <marker date="1483275868416" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
+                <marker date="1483275868416" expanded="true" signature="3088:3131" placeholder="insert into link... " />
+                <marker date="1483275868416" expanded="true" signature="3236:3269" placeholder="select last_... link" />
+                <marker date="1483275868416" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
+                <marker date="1483275868416" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
+                <marker date="1483275868416" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
+                <marker date="1483275868416" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
+                <marker date="1483275868416" expanded="true" signature="5194:5275" placeholder="create table... link" />
+                <marker date="1483275868416" expanded="true" signature="5307:5324" placeholder="create table... link" />
+                <marker date="1483275868416" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
+                <marker date="1483275868416" expanded="true" signature="5427:5465" placeholder="create index... wordidx" />
+                <marker date="1483275868416" expanded="true" signature="5497:5532" placeholder="create index... urlidx" />
+                <marker date="1483275868416" expanded="true" signature="5564:5611" placeholder="create index... wordurlidx" />
+                <marker date="1483275868416" expanded="true" signature="5643:5680" placeholder="create index... urltoindex" />
+                <marker date="1483275868416" expanded="true" signature="5712:5751" placeholder="create index... urlfromidx" />
+                <marker date="1483275868416" expanded="true" signature="6304:6346" placeholder="select rowid... wordlist" />
+                <marker date="1483275868416" expanded="true" signature="7000:7014" placeholder="select %s fr... " />
+                <marker date="1483275868416" expanded="true" signature="7000:7024" placeholder="select missi... missing_value" />
+                <marker date="1483275868416" expanded="true" signature="7292:7314" placeholder="insert into ss... " />
+                <marker date="1483275868416" expanded="true" signature="7292:7320" placeholder="insert into ss... " />
+                <marker date="1483275868416" expanded="true" signature="7292:7328" placeholder="insert into ss... " />
+                <marker date="1483275868416" expanded="true" signature="7398:7424" placeholder="select rowid... wordlocation" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cursors.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Anaconda2-4.2.0-64_bit/Lib/site-packages/MySQLdb/cursors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,6 +212,7 @@
         <option value="$PROJECT_DIR$/intelligence/generatefeedvector.py" />
         <option value="$PROJECT_DIR$/intelligence/downloadzebodata.py" />
         <option value="$PROJECT_DIR$/intelligence/clusters.py" />
+        <option value="$PROJECT_DIR$/intelligence/searchengine/searchengine.py" />
       </list>
     </option>
   </component>
@@ -210,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -256,20 +305,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="searchengine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -281,7 +343,7 @@
       <recent name="F:\Code\Git\Python\Python\challenge\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.clusters">
+  <component name="RunManager" selected="Python.searchengine">
     <configuration default="false" name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -296,24 +358,6 @@
       <module name="Python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/intelligence/data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="deliciousrec" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/intelligence" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/intelligence/deliciousrec.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -368,6 +412,24 @@
       <module name="Python" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/intelligence/downloadzebodata.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="searchengine" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/intelligence/searchengine" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/intelligence/searchengine/searchengine.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -567,18 +629,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.data" />
-      <item index="1" class="java.lang.String" itemvalue="Python.deliciousrec" />
-      <item index="2" class="java.lang.String" itemvalue="Python.generatefeedvector" />
-      <item index="3" class="java.lang.String" itemvalue="Python.clusters" />
-      <item index="4" class="java.lang.String" itemvalue="Python.downloadzebodata" />
+      <item index="1" class="java.lang.String" itemvalue="Python.generatefeedvector" />
+      <item index="2" class="java.lang.String" itemvalue="Python.clusters" />
+      <item index="3" class="java.lang.String" itemvalue="Python.downloadzebodata" />
+      <item index="4" class="java.lang.String" itemvalue="Python.searchengine" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.clusters" />
-        <item index="1" class="java.lang.String" itemvalue="Python.downloadzebodata" />
-        <item index="2" class="java.lang.String" itemvalue="Python.generatefeedvector" />
-        <item index="3" class="java.lang.String" itemvalue="Python.data" />
-        <item index="4" class="java.lang.String" itemvalue="Python.deliciousrec" />
+        <item index="0" class="java.lang.String" itemvalue="Python.searchengine" />
+        <item index="1" class="java.lang.String" itemvalue="Python.clusters" />
+        <item index="2" class="java.lang.String" itemvalue="Python.downloadzebodata" />
+        <item index="3" class="java.lang.String" itemvalue="Python.generatefeedvector" />
+        <item index="4" class="java.lang.String" itemvalue="Python.data" />
       </list>
     </recent_temporary>
   </component>
@@ -596,21 +658,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="-8" width="1318" height="784" extended-state="6" />
+    <frame x="56" y="-8" width="1318" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1390169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27299702" sideWeight="0.5030722" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2744807" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27299702" sideWeight="0.4969278" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -620,6 +681,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937685" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -635,16 +697,98 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/intelligence/deliciousrec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#129#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/intelligence/data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/generatefeedvector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#144#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/clusters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#89#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/clusters.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/downloadzebodata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#98#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/zebo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/wordclust.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/feedlist.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/deliciousrec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#129#140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -672,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -718,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -733,7 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,36 +987,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="10" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/intelligence/data/bligclust.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/data/blogdata.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74509805">
-          <caret line="18" column="2833" selection-start-line="18" selection-start-column="2833" selection-end-line="18" selection-end-column="2833" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/data/wordclust.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/deliciousrec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#129#140#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/intelligence/generatefeedvector.py">
@@ -889,11 +1005,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/data/zebo.txt">
+    <entry file="file://$PROJECT_DIR$/intelligence/data/mds2d.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/blogdata.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding />
+        <state vertical-scroll-proportion="0.05891473">
+          <caret line="2" column="2741" selection-start-line="2" selection-start-column="2741" selection-end-line="2" selection-end-column="2741" />
         </state>
       </provider>
     </entry>
@@ -907,7 +1027,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/data/clusters.jpg">
+    <entry file="file://$PROJECT_DIR$/intelligence/data/zebo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/wordclust.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -920,17 +1048,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/intelligence/data/mds2d.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/intelligence/deliciousrec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#129#140#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/intelligence/clusters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38043478">
-          <caret line="180" column="9" selection-start-line="180" selection-start-column="9" selection-end-line="180" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#89#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generator/SQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04121475">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/data/clusters.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda2-4.2.0-64_bit/Lib/site-packages/MySQLdb/cursors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intelligence/searchengine/searchengine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.924078">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+          <folding>
+            <element signature="e#93#107#0" expanded="true" />
+            <marker date="1483275868416" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
+            <marker date="1483275868416" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
+            <marker date="1483275868416" expanded="true" signature="995:1023" placeholder="select last_... " />
+            <marker date="1483275868416" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
+            <marker date="1483275868416" expanded="true" signature="995:1026" placeholder="select last_... " />
+            <marker date="1483275868416" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
+            <marker date="1483275868416" expanded="true" signature="1829:1830" placeholder="insert into wordlocation... " />
+            <marker date="1483275868416" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
+            <marker date="1483275868416" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
+            <marker date="1483275868416" expanded="true" signature="3088:3131" placeholder="insert into link... " />
+            <marker date="1483275868416" expanded="true" signature="3236:3269" placeholder="select last_... link" />
+            <marker date="1483275868416" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
+            <marker date="1483275868416" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
+            <marker date="1483275868416" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
+            <marker date="1483275868416" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
+            <marker date="1483275868416" expanded="true" signature="5194:5275" placeholder="create table... link" />
+            <marker date="1483275868416" expanded="true" signature="5307:5324" placeholder="create table... link" />
+            <marker date="1483275868416" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
+            <marker date="1483275868416" expanded="true" signature="5427:5465" placeholder="create index... wordidx" />
+            <marker date="1483275868416" expanded="true" signature="5497:5532" placeholder="create index... urlidx" />
+            <marker date="1483275868416" expanded="true" signature="5564:5611" placeholder="create index... wordurlidx" />
+            <marker date="1483275868416" expanded="true" signature="5643:5680" placeholder="create index... urltoindex" />
+            <marker date="1483275868416" expanded="true" signature="5712:5751" placeholder="create index... urlfromidx" />
+            <marker date="1483275868416" expanded="true" signature="6304:6346" placeholder="select rowid... wordlist" />
+            <marker date="1483275868416" expanded="true" signature="7000:7014" placeholder="select %s fr... " />
+            <marker date="1483275868416" expanded="true" signature="7000:7024" placeholder="select missi... missing_value" />
+            <marker date="1483275868416" expanded="true" signature="7292:7314" placeholder="insert into ss... " />
+            <marker date="1483275868416" expanded="true" signature="7292:7320" placeholder="insert into ss... " />
+            <marker date="1483275868416" expanded="true" signature="7292:7328" placeholder="insert into ss... " />
+            <marker date="1483275868416" expanded="true" signature="7398:7424" placeholder="select rowid... wordlocation" />
           </folding>
         </state>
       </provider>
