@@ -196,12 +196,18 @@ class Searcher:
         return rows,word_ids
 
     def get_scored_list(self,rows,wordids):
-        total_scores = dict([(row[0],0) for row in rows])
+        total_scores = dict([(row[0],0) for row in rows]) # [(index,0)]
         # 评价函数
-        weights = [(1.0,self.frequency_score(rows))]
+        weights = [(1.0,self.location_score(rows)),(0.5,self.frequency_score(rows)),
+                   (1.5,self.distance_score(rows))]
+        print "weights:",weights
         for (weight,scores) in weights:
             for url in total_scores:
-                total_scores[url] += weight * scores[url]
+                print "url:",url
+                print "scores[url]:",scores[url]
+                total_scores[url] += weight * scores[url]# 每一个网页都有了基本的数据 现在再乘以出现的次数
+                print "total_scores:",total_scores[url]
+        # 实际上scores和total_scores 没有变化
         return total_scores
 
     def get_url_name(self,id):
@@ -209,8 +215,9 @@ class Searcher:
         return self.cursor.fetchone()[0]
 
     def query(self,q):
-        rows,word_ids = self.get_match_rows(q) # 网页index 位置
+        rows,word_ids = self.get_match_rows(q) # rows:[urlid,word0.location,word1.location...] word_ids: wordlist.id
         scores = self.get_scored_list(rows,word_ids)
+        print "scores:",scores
         ranked_cores = sorted([(score,url) for (url,score) in scores.items()],reverse=1)
         for (score,url_id) in ranked_cores[0:10]:
             print '%f\t%s' % (score,self.get_url_name(url_id))
@@ -229,24 +236,50 @@ class Searcher:
 
     # 单词频度
     def frequency_score(self,rows):
-        counts = dict((row[0],0) for row in rows)
+        counts = dict((row[0],0) for row in rows) # [(urlid,0)]
         for row in rows:
-            counts[row[0]] += 1
+            counts[row[0]] += 1 # 网页出现的次数
         return self.normalize_scores(counts)
 
+    # 根据单词出现的位置 越靠前相关度越高
+    def location_score(self,rows):
+        rows = map(lambda x : map(lambda y:int(y),x),list(rows))
+        locations = dict([(row[0],1000000) for row in rows]) # [{index,1000000)]
+        for row in rows:
+            print row[1:]
+            loc = sum(row[1:]) # row[1:] 后面是各个单词出现的位置index
+            if loc < locations[row[0]]:
+                locations[row[0]] = loc # 顺便还能找到同一个页面中最前面的数据
+        return self.normalize_scores(locations,small_is_better=1)
+
+    # 各个单词出现的距离，而且正确的顺序出现
+    def distance_score(self,rows):
+
+        rows = map(lambda x : map(lambda y:int(y),x),list(rows))
+        if len(rows[0]) <= 2: # 如果只有一个单词 则无意义
+            return dict([(row[0],1.0) for row in rows])
+
+        min_distance = dict([(row[0],1000000) for row in rows])
+
+        for row in rows:
+            dist = sum([abs(row[i]-row[i-1]) for i in range(2,len(row))])# 2-len(row)-1 相互之间的距离之和
+            if dist<min_distance[row[0]]:
+                min_distance[row[0]] = dist
+        return self.normalize_scores(min_distance,small_is_better=1)
 if __name__ == '__main__':
 
-    page_list = ['http://en.people.cn/']
-    craw = crawler()
+    # page_list = ['http://en.people.cn/']
+    # craw = crawler()
     # craw.create_index_tables()
-    craw.crawl(page_list)
-    #test = "insert into ss(id,ukr)VALUES (%d,%d)"%(1,2)
-    #print test
-    #l = [row for row in craw.cursor.execute('select * from wordlocation').fetchall()]
-    #print l
-    # searcher = Searcher()
+    # craw.crawl(page_list)
+    # test = "insert into ss(id,ukr)VALUES (%d,%d)"%(1,2)
+    # print test
+    # l = [row for row in craw.cursor.execute('select * from wordlocation').fetchall()]
+    # print l
+    searcher = Searcher()
     # print searcher.get_match_rows("test new party")
-    # searcher.query("new test")
+
+    searcher.query("news china party test")
 
 
 
