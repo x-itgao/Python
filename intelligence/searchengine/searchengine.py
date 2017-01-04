@@ -153,6 +153,33 @@ class crawler:
         self.db_commit()
 
 
+    def calculate_page_rank(self,iterations=20):
+        self.cursor.execute("drop table if EXISTS pagerank")
+        self.db_commit()
+        self.cursor.execute("create table pagerank(urlid INT PRIMARY KEY ,score FLOAT) ")
+        self.db_commit()
+        # 初始化每一个url，令PageRank值为1
+        self.cursor.execute("insert into pagerank SELECT id,1.0 from urllist")
+        self.db_commit()
+
+        for i in range(iterations):
+            print "Iteration %d" % i
+            for (url_id,) in (self.cursor.execute("select id from urllist"),self.cursor.fetchall())[1]:
+                pr = 0.15
+                # 循环遍历指向当前网页的所有其他网页
+                for (linker,) in (self.cursor.execute("select distinct(fromid) from link where toid=%d"%url_id),
+                                                      self.cursor.fetchall())[1]:
+                    # 得到链接源对应网页的PageRank值
+                    linking_pr = (self.cursor.execute("select score from pagerank where urlid=%d"%linker),
+                                  self.cursor.fetchone()[0])[1]
+                    # 根据链接源，求得总的连接数
+                    linking_count = (self.cursor.execute("select count(*) from link where fromid=%d"%linker),
+                                                         self.cursor.fetchone()[0])[1]
+
+                    pr += 0.85 * (linking_pr / linking_count)
+                self.cursor.execute("update pagerank set score=%f where urlid=%d" % (pr,url_id))
+                self.db_commit()
+
 class Searcher:
 
     def __init__(self):
@@ -199,12 +226,12 @@ class Searcher:
         total_scores = dict([(row[0],0) for row in rows]) # [(index,0)]
         # 评价函数
         weights = [(1.0,self.location_score(rows)),(0.5,self.frequency_score(rows)),
-                   (1.5,self.distance_score(rows))]
+                   (1.5,self.inbound_link_score(rows))]
         print "weights:",weights
         for (weight,scores) in weights:
             for url in total_scores:
-                print "url:",url
-                print "scores[url]:",scores[url]
+                # print "url:",url
+                #print "scores[url]:",scores[url]
                 total_scores[url] += weight * scores[url]# 每一个网页都有了基本的数据 现在再乘以出现的次数
                 print "total_scores:",total_scores[url]
         # 实际上scores和total_scores 没有变化
@@ -266,20 +293,50 @@ class Searcher:
             if dist<min_distance[row[0]]:
                 min_distance[row[0]] = dist
         return self.normalize_scores(min_distance,small_is_better=1)
+
+    # 处理外部回指链接 在每个网页上统计链接的数目
+    def inbound_link_score(self,rows):
+        unique_urls = set([row[0] for row in rows])
+        inbound_count = dict([(u,(self.cursor.execute("select count(*) from link where toid=%d"%u),self.cursor.fetchone()[0])[1]) for u in unique_urls])
+        # print "inbound_count",inbound_count
+        return self.normalize_scores(inbound_count)
+
+    # 利用PageRank值进行归一化处理来进行评价
+    def page_rank_score(self,rows):
+        page_ranks = dict([(row[0],(self.cursor.execute("select score from pagerank where urlid=%d"%row[0]),
+                                    self.cursor.fetchall()[0])[1]) for row in rows])
+        max_rank = max(page_ranks.values())
+        normalized_score = dict([(u,float(l) / max_rank) for (u,l) in page_ranks.items()])
+        return normalized_score
+
+    # 利用指向某一网页的链接文本来决定网页的相关度
+    def link_text_socre(self,rows,word_ids):
+        link_scores = dict([(row[0],0) for row in rows])
+        for word_id in word_ids:
+            self.cursor.execute("select link.fromid,link.toid from linkwords,link "
+                                "where wordid=%d and linkwords.linkid=link.id"%word_id)
+            for (fromid,toid) in self.cursor.fetchall():
+                if toid in link_scores:
+                    pr = (self.cursor.execute("select score from pagerank wher urlid=%d"%fromid),self.cursor.fetchone()[0])[1]
+                    link_scores[toid] += pr
+        max_score = max(link_scores.values())
+        normalized_scores = dict([(u,float(l) / max_score) for (u,l) in link_scores.items()])
+        return normalized_scores
 if __name__ == '__main__':
 
     # page_list = ['http://en.people.cn/']
-    # craw = crawler()
+    craw = crawler()
+    craw.calculate_page_rank()
     # craw.create_index_tables()
     # craw.crawl(page_list)
     # test = "insert into ss(id,ukr)VALUES (%d,%d)"%(1,2)
     # print test
     # l = [row for row in craw.cursor.execute('select * from wordlocation').fetchall()]
     # print l
-    searcher = Searcher()
+    # searcher = Searcher()
     # print searcher.get_match_rows("test new party")
 
-    searcher.query("news china party test")
+    # searcher.query("news china party test")
 
 
 
