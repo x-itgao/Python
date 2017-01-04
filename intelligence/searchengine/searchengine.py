@@ -153,9 +153,9 @@ class crawler:
         self.db_commit()
 
 
-class searcher:
+class Searcher:
 
-    def __init__(self,db_name):
+    def __init__(self):
         self.conn = MySQLdb.connect("localhost","root","root","intelligence",charset="utf8")
         self.cursor = self.conn.cursor()
 
@@ -172,9 +172,10 @@ class searcher:
         # 根据空格拆分单词
         words = q.split(' ')
         table_number = 0
+        print words
         for word in words:
-            self.cursor.execute("select rowid from wordlist where word='%s'"%word)
-            word_row = self.cursor.fetchone()
+            self.cursor.execute("select id from wordlist where word='%s'"%word)
+            word_row = self.cursor.fetchone() # 从wordlist中查找到id
             if word_row is not None:
                 word_id = word_row[0]
                 word_ids.append(word_id)
@@ -188,10 +189,53 @@ class searcher:
                 table_number += 1
         # 根据各个分组 建立查询
         full_query = 'select %s from %s where %s'%(field_list,table_list,clause_list)
+        print full_query
         self.cursor.execute(full_query)
-        cur = self.cursor
+
+        rows = [row for row in self.cursor.fetchall()]
+        return rows,word_ids
+
+    def get_scored_list(self,rows,wordids):
+        total_scores = dict([(row[0],0) for row in rows])
+        # 评价函数
+        weights = [(1.0,self.frequency_score(rows))]
+        for (weight,scores) in weights:
+            for url in total_scores:
+                total_scores[url] += weight * scores[url]
+        return total_scores
+
+    def get_url_name(self,id):
+        self.cursor.execute("select url from urllist where id=%d" % id)
+        return self.cursor.fetchone()[0]
+
+    def query(self,q):
+        rows,word_ids = self.get_match_rows(q) # 网页index 位置
+        scores = self.get_scored_list(rows,word_ids)
+        ranked_cores = sorted([(score,url) for (url,score) in scores.items()],reverse=1)
+        for (score,url_id) in ranked_cores[0:10]:
+            print '%f\t%s' % (score,self.get_url_name(url_id))
+
+    # 归一化函数 使数据具有相同的值域及变化方向，根据每个评价值与最佳结果的接近程度
+    def normalize_scores(self,scores,small_is_better=0):
+        v_small = 0.00001
+        if small_is_better:
+            min_score = min(scores.values())
+            return dict([(u,float(min_score)/max(v_small,l)) for (u,l) in scores.items()])
+        else:
+            max_score = max(scores.values())
+            if max_score == 0:
+                max_score = v_small
+            return dict([(u,float(c) / max_score) for (u,c) in scores.items()])
+
+    # 单词频度
+    def frequency_score(self,rows):
+        counts = dict((row[0],0) for row in rows)
+        for row in rows:
+            counts[row[0]] += 1
+        return self.normalize_scores(counts)
 
 if __name__ == '__main__':
+
     page_list = ['http://en.people.cn/']
     craw = crawler()
     # craw.create_index_tables()
@@ -200,6 +244,10 @@ if __name__ == '__main__':
     #print test
     #l = [row for row in craw.cursor.execute('select * from wordlocation').fetchall()]
     #print l
+    # searcher = Searcher()
+    # print searcher.get_match_rows("test new party")
+    # searcher.query("new test")
+
 
 
 

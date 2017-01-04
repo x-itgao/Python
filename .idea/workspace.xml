@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7b340fd-6f4c-4901-9d3f-73096c0d8bee" name="默认的" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/intelligence/searchengine/searchengine.py" afterPath="$PROJECT_DIR$/intelligence/searchengine/searchengine.py" />
     </list>
     <ignored path="Python.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +27,7 @@
     <SUITE FILE_PATH="coverage/Python$deliciousrec.coverage" NAME="deliciousrec Coverage Results" MODIFIED="1482298439522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
     <SUITE FILE_PATH="coverage/Python$data.coverage" NAME="data Coverage Results" MODIFIED="1482304453284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
     <SUITE FILE_PATH="coverage/Python$downloadzebodata.coverage" NAME="downloadzebodata Coverage Results" MODIFIED="1482379270423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
-    <SUITE FILE_PATH="coverage/Python$searchengine.coverage" NAME="searchengine Coverage Results" MODIFIED="1483275251229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence/searchengine" />
+    <SUITE FILE_PATH="coverage/Python$searchengine.coverage" NAME="searchengine Coverage Results" MODIFIED="1483506712932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence/searchengine" />
     <SUITE FILE_PATH="coverage/Python$test.coverage" NAME="test Coverage Results" MODIFIED="1482240176321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intelligence" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -72,40 +73,29 @@
       <file leaf-file-name="searchengine.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/intelligence/searchengine/searchengine.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.924078">
-              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.556962">
+              <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
               <folding>
                 <element signature="e#93#107#0" expanded="true" />
-                <marker date="1483275868416" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
-                <marker date="1483275868416" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
-                <marker date="1483275868416" expanded="true" signature="995:1023" placeholder="select last_... " />
-                <marker date="1483275868416" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
-                <marker date="1483275868416" expanded="true" signature="995:1026" placeholder="select last_... " />
-                <marker date="1483275868416" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
-                <marker date="1483275868416" expanded="true" signature="1829:1830" placeholder="insert into wordlocation... " />
-                <marker date="1483275868416" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
-                <marker date="1483275868416" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
-                <marker date="1483275868416" expanded="true" signature="3088:3131" placeholder="insert into link... " />
-                <marker date="1483275868416" expanded="true" signature="3236:3269" placeholder="select last_... link" />
-                <marker date="1483275868416" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
-                <marker date="1483275868416" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
-                <marker date="1483275868416" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
-                <marker date="1483275868416" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
-                <marker date="1483275868416" expanded="true" signature="5194:5275" placeholder="create table... link" />
-                <marker date="1483275868416" expanded="true" signature="5307:5324" placeholder="create table... link" />
-                <marker date="1483275868416" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
-                <marker date="1483275868416" expanded="true" signature="5427:5465" placeholder="create index... wordidx" />
-                <marker date="1483275868416" expanded="true" signature="5497:5532" placeholder="create index... urlidx" />
-                <marker date="1483275868416" expanded="true" signature="5564:5611" placeholder="create index... wordurlidx" />
-                <marker date="1483275868416" expanded="true" signature="5643:5680" placeholder="create index... urltoindex" />
-                <marker date="1483275868416" expanded="true" signature="5712:5751" placeholder="create index... urlfromidx" />
-                <marker date="1483275868416" expanded="true" signature="6304:6346" placeholder="select rowid... wordlist" />
-                <marker date="1483275868416" expanded="true" signature="7000:7014" placeholder="select %s fr... " />
-                <marker date="1483275868416" expanded="true" signature="7000:7024" placeholder="select missi... missing_value" />
-                <marker date="1483275868416" expanded="true" signature="7292:7314" placeholder="insert into ss... " />
-                <marker date="1483275868416" expanded="true" signature="7292:7320" placeholder="insert into ss... " />
-                <marker date="1483275868416" expanded="true" signature="7292:7328" placeholder="insert into ss... " />
-                <marker date="1483275868416" expanded="true" signature="7398:7424" placeholder="select rowid... wordlocation" />
+                <marker date="1483506712885" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
+                <marker date="1483506712885" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
+                <marker date="1483506712885" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
+                <marker date="1483506712885" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
+                <marker date="1483506712885" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
+                <marker date="1483506712885" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
+                <marker date="1483506712885" expanded="true" signature="3088:3131" placeholder="insert into link... " />
+                <marker date="1483506712885" expanded="true" signature="3236:3269" placeholder="select last_... link" />
+                <marker date="1483506712885" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
+                <marker date="1483506712885" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
+                <marker date="1483506712885" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
+                <marker date="1483506712885" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
+                <marker date="1483506712885" expanded="true" signature="5194:5275" placeholder="create table... link" />
+                <marker date="1483506712885" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
+                <marker date="1483506712885" expanded="true" signature="6316:6355" placeholder="select id fr... wordlist" />
+                <marker date="1483506712885" expanded="true" signature="7027:7051" placeholder="select missi... missing_value" />
+                <marker date="1483506712885" expanded="true" signature="7636:7665" placeholder="select url f... urllist" />
+                <marker date="1483506712885" expanded="true" signature="7636:7669" placeholder="select url f... urllist" />
+                <marker date="1483506712885" expanded="true" signature="7636:7671" placeholder="select url f... urllist" />
               </folding>
             </state>
           </provider>
@@ -258,7 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,7 +315,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -659,7 +649,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-8" width="1318" height="784" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1390169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -670,7 +660,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27299702" sideWeight="0.4969278" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60534126" sideWeight="0.4969278" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1090,40 +1080,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/intelligence/searchengine/searchengine.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.924078">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.556962">
+          <caret line="238" column="40" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
           <folding>
             <element signature="e#93#107#0" expanded="true" />
-            <marker date="1483275868416" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
-            <marker date="1483275868416" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
-            <marker date="1483275868416" expanded="true" signature="995:1023" placeholder="select last_... " />
-            <marker date="1483275868416" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
-            <marker date="1483275868416" expanded="true" signature="995:1026" placeholder="select last_... " />
-            <marker date="1483275868416" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
-            <marker date="1483275868416" expanded="true" signature="1829:1830" placeholder="insert into wordlocation... " />
-            <marker date="1483275868416" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
-            <marker date="1483275868416" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
-            <marker date="1483275868416" expanded="true" signature="3088:3131" placeholder="insert into link... " />
-            <marker date="1483275868416" expanded="true" signature="3236:3269" placeholder="select last_... link" />
-            <marker date="1483275868416" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
-            <marker date="1483275868416" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
-            <marker date="1483275868416" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
-            <marker date="1483275868416" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
-            <marker date="1483275868416" expanded="true" signature="5194:5275" placeholder="create table... link" />
-            <marker date="1483275868416" expanded="true" signature="5307:5324" placeholder="create table... link" />
-            <marker date="1483275868416" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
-            <marker date="1483275868416" expanded="true" signature="5427:5465" placeholder="create index... wordidx" />
-            <marker date="1483275868416" expanded="true" signature="5497:5532" placeholder="create index... urlidx" />
-            <marker date="1483275868416" expanded="true" signature="5564:5611" placeholder="create index... wordurlidx" />
-            <marker date="1483275868416" expanded="true" signature="5643:5680" placeholder="create index... urltoindex" />
-            <marker date="1483275868416" expanded="true" signature="5712:5751" placeholder="create index... urlfromidx" />
-            <marker date="1483275868416" expanded="true" signature="6304:6346" placeholder="select rowid... wordlist" />
-            <marker date="1483275868416" expanded="true" signature="7000:7014" placeholder="select %s fr... " />
-            <marker date="1483275868416" expanded="true" signature="7000:7024" placeholder="select missi... missing_value" />
-            <marker date="1483275868416" expanded="true" signature="7292:7314" placeholder="insert into ss... " />
-            <marker date="1483275868416" expanded="true" signature="7292:7320" placeholder="insert into ss... " />
-            <marker date="1483275868416" expanded="true" signature="7292:7328" placeholder="insert into ss... " />
-            <marker date="1483275868416" expanded="true" signature="7398:7424" placeholder="select rowid... wordlocation" />
+            <marker date="1483506712885" expanded="true" signature="661:692" placeholder="select rowid... missing_value" />
+            <marker date="1483506712885" expanded="true" signature="844:877" placeholder="insert into missing_value... " />
+            <marker date="1483506712885" expanded="true" signature="995:1024" placeholder="select last_... missing_value" />
+            <marker date="1483506712885" expanded="true" signature="1709:1773" placeholder="insert into wordlocation... " />
+            <marker date="1483506712885" expanded="true" signature="2448:2485" placeholder="select id fr... urllist" />
+            <marker date="1483506712885" expanded="true" signature="2586:2629" placeholder="select * fro... wordlocation" />
+            <marker date="1483506712885" expanded="true" signature="3088:3131" placeholder="insert into link... " />
+            <marker date="1483506712885" expanded="true" signature="3236:3269" placeholder="select last_... link" />
+            <marker date="1483506712885" expanded="true" signature="3553:3603" placeholder="insert into linkwords... " />
+            <marker date="1483506712885" expanded="true" signature="4848:4921" placeholder="create table... urllist" />
+            <marker date="1483506712885" expanded="true" signature="4953:5027" placeholder="create table... wordlist" />
+            <marker date="1483506712885" expanded="true" signature="5059:5162" placeholder="create table... wordlocation" />
+            <marker date="1483506712885" expanded="true" signature="5194:5275" placeholder="create table... link" />
+            <marker date="1483506712885" expanded="true" signature="5307:5395" placeholder="create table... linkwords" />
+            <marker date="1483506712885" expanded="true" signature="6316:6355" placeholder="select id fr... wordlist" />
+            <marker date="1483506712885" expanded="true" signature="7027:7051" placeholder="select missi... missing_value" />
+            <marker date="1483506712885" expanded="true" signature="7636:7665" placeholder="select url f... urllist" />
+            <marker date="1483506712885" expanded="true" signature="7636:7669" placeholder="select url f... urllist" />
+            <marker date="1483506712885" expanded="true" signature="7636:7671" placeholder="select url f... urllist" />
           </folding>
         </state>
       </provider>
